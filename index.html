@@ -10,7 +10,23 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4;
         }
-.container {
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .yes-button {
+            background-color: lightgreen;
+        }
+
+        .no-button {
+            background-color: lightcoral;
+        }
+            .container {
   text-align: center;
 }
 </style>
@@ -21,28 +37,23 @@ body {
   <h1>MAYA! MAYA! MAYA!</h1>
   <p>This year together has been dope. So much excited and happy to share my future with you.</p>
   <p>Do you still want to explore SANTORINI with me?</p>
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <!-- Yes and No buttons -->
+    <button class="yes-button" id="yesBtn" onclick="handleYes()">Yes</button>
+    <button class="no-button" id="noBtn" onclick="handleNo()">No</button>
 
-        <button id="yesButton" class="button yes-button" onclick="proceed()">Yes</button>
-    <button id="noButton" class="button no-button" onclick="increaseSize()">No</button>
-</div>
+    <script>
+        // Function to handle Yes button click (opens a new page)
+        function handleYes() {
+            window.location.href = "https://www.example.com";  // Change to your desired URL
+        }
 
-<script>
-    let yesButton = document.getElementById("yesButton");
-    let noButton = document.getElementById("noButton");
-    let sizeIncrement = 1.2; // Factor to increase size of Yes button
-
-    function increaseSize() {
-        // Increase the size of the Yes button by a factor each time "No" is clicked
-        let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-        yesButton.style.fontSize = (currentSize * sizeIncrement) + "px";
-    }
-
-    function proceed() {
-        // Open a new page when "Yes" is clicked
-        window.location.href = "https://Will you always choose me";  // Replace with your desired URL
-    }
-    </div>
+        // Function to handle No button click (increase the size of the Yes button)
+        function handleNo() {
+            var yesButton = document.getElementById("yesBtn");
+            var currentSize = window.getComputedStyle(yesButton).fontSize;
+            var newSize = parseInt(currentSize) + 10;  // Increase font size by 10px
+            yesButton.style.fontSize = newSize + "px";  // Apply the new font size    
+            </div>
 </center> 
     </style>
 </head>
