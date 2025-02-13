@@ -47,17 +47,15 @@ body {
     <script>
         let yesButton = document.getElementById("yesButton");
         let noButton = document.getElementById("noButton");
-        let sizeIncrement = 1.2; // Factor to increase size of Yes button
+        let sizeIncrement = 1.2; 
 
         function increaseSize() {
-            // Increase the size of the Yes button by a factor each time "No" is clicked
             let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
             yesButton.style.fontSize = (currentSize * sizeIncrement) + "px";
         }
 
         function proceed() {
-            // Open a new page when "Yes" is clicked
-            window.location.href = "https://example.com";  // Replace with your desired URL
+            window.location.href = "https://example.com"; 
         }
     </script>
 </center> 
